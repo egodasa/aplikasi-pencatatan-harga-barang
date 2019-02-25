@@ -1,0 +1,25 @@
+<html>
+<head>
+ <title>TAMBAH PANGAN </title>
+</head>
+<body>
+<h1>TAMBAH PANGAN</h1>
+
+
+<form>
+<label class="form-label" for="nm_pangan">NAMA PANGAN</label>
+<input class="form-control" type="text" name="nm_pangan" />
+<br/>
+<select class="form-control custom-select" name="id_jenis">
+	<option value="Hewani">Hewani</option>
+	<option value="Nabati">Nabati</option>
+</select>
+<br/>
+<label class="form-label" for="satuan">SATUAN</label>
+<input class="form-control" type="satuan" name="satuan" />
+<br/>
+<button type="submit" class="btn btn-success">SIMPAN</button>
+<button type="reset" class="btn btn-danger">RESET</button>
+<br/>
+</form>
+

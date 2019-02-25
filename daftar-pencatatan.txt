@@ -1,0 +1,30 @@
+<html>
+<head>
+ <title>DAFTAR USER </title>
+</head>
+<body>
+<h1>DAFTAR USER</h1>
+<table id="tabel" class="table table-bordered">
+	<thead>
+		<tr>
+			<td>No</td>
+			<td>username</td>
+			<td>nama lengkap</td>
+			<td>alamat</td>
+			<td>level</td>
+			
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>hewani</td>
+			
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>nabati</td>
+			
+		</tr>
+	</tbody>
+</table>

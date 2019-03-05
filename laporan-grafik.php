@@ -54,12 +54,19 @@ if($tgl != "-- Semua Tanggal --" && $id_pangan != 0 && $id_kecamatan != 0)
   $query->execute();
   $hasil = $query->fetchAll();
   
+  $waktu_tmp = explode(" ", tanggal_indo($hasil[0]['tgl_pencatatan']));
+  $bulan = $waktu_tmp[1];
+  $tahun = $waktu_tmp[2];
+  
+  
   foreach($hasil as $d)
   {
     $labels[] = tanggal_indo($d['tgl_pencatatan']);
     $harga_jual[] = $d['harga_jual'];
     $harga_beli[] = $d['harga_beli'];
   }
+  $harga_beli[] = 0;
+  $harga_jual[] = 0;
 }
 
 
@@ -141,7 +148,7 @@ if(document.getElementById("id_pangan").value != "0" && document.getElementById(
       options: {
         title: {
           display: true,
-          text: 'Grafik Harga Jual/Beli'
+          text: ["Grafik Harga Jual/Beli <?=ucwords($hasil[0]['nm_pangan'])?>", "<?='Kecamatan '.$hasil[0]['nm_kecamatan']?>", "<?=' Per '.$bulan.' '.$tahun?>"]
         }
       }
   });

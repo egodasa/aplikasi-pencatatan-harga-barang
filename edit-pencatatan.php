@@ -49,6 +49,9 @@ include "atas.php";
             <?php endforeach; ?>
         </select>
         <br />
+		<label class="form-label" for="nama_pasar">Nama Pasar</label>
+        <input class="form-control" type="text" name="nama_pasar" id="nama_pasar" />
+        <br />
         <label class="form-label" for="tgl_pencatatan">TANGGAL</label>
         <input class="form-control" type="input" name="tgl_pencatatan" id="tgl_pencatatan" value="pilih tanggal" />
         <br />
@@ -76,6 +79,7 @@ include "atas.php";
         document.getElementById("tgl_pencatatan").value = "<?=$detail['tgl_pencatatan']?>";
         document.getElementById("harga_jual").value = <?=$detail['harga_jual']?>;
         document.getElementById("harga_beli").value = <?=$detail['harga_beli']?>;
+        document.getElementById("nama_pasar").value = "<?=$detail['nama_pasar']?>";
     </script>
     <?php
     include "bawah.php"; 

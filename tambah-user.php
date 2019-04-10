@@ -34,6 +34,7 @@ include "atas.php";
 <label class="form-label" for="level">LEVEL</label>
 <select class="form-control" name="level">
 	<option value="Kepala Dinas">kepala dinas</option>
+	<option value="Petugas Lapangan">petugas lapangan</option>
 	<option value="Sekretaris">sekretaris</option>
 </select>
 </div>

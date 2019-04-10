@@ -48,6 +48,7 @@ if(isset($_GET['id_user'])){
     <label class="form-label" for="level">LEVEL</label>
     <select class="form-control" id="level" name="level">
       <option value="Kepala Dinas">kepala dinas</option>
+	  <option value="Petugas Lapangan">petugas lapangan</option>
       <option value="Sekretaris">sekretaris</option>
     </select>
   </div>
@@ -56,7 +57,7 @@ if(isset($_GET['id_user'])){
   <button type="reset" class="btn btn-danger">RESET</button>
 </form>
 <script>
-  document.getElementById("level").value = <?=$detail['level']?>;
+  document.getElementById("level").value = "<?=$detail['level']?>";
 </script>
 <?php
 

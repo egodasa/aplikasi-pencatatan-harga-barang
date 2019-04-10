@@ -13,10 +13,17 @@
       $_SESSION['level'] = $data['level'];
       $_SESSION['jk'] = $data['jk'];
       // Cek level agar halaman di redirect sesuai aktor
-      if($data['level'] == "Sekretaris"){
+      if($data['level'] == "Sekretaris")
+	  {
         header("Location: daftar-pencatatan.php");
-      }else if($data['level'] == "Kepala Dinas"){
+      }
+	  else if($data['level'] == "Kepala Dinas")
+	  {
         header("Location: laporan-tabel.php");
+      }
+	  else if($data['level'] == "Petugas Lapangan")
+	  {
+        header("Location: daftar-pencatatan.php");
       }
     }else{
       header("Location: login.php?status=gagal");

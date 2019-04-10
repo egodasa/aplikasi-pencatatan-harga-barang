@@ -89,12 +89,28 @@ $kecamatan = $query->fetchAll();
 			<td>harga beli</td>
 			<td>harga jual</td>
 			<td>tanggal pencatatan</td>
+			<td>nama pasar</td>
+			<td>status</td>
 			<td>aksi</td>
 		</tr>
 	</thead>
 	<tbody>
 		<?php
 foreach($daftarpencatatan as $i=>$dp){
+	$tombol_status = "";
+	if($dp['status'] == 1)
+	{
+		$tombol_status = "disabled";
+	}
+	$lihat = "";
+	if($dp['status'] == 0)
+	{
+		$lihat = "Belum Dilihat";
+	}
+	else
+	{
+		$lihat = "Sudah Dilihat";
+	}
 	echo "<tr>
 			<td>".($i+1)."</td>
 			<td>$dp[nm_pangan]</td>
@@ -103,9 +119,10 @@ foreach($daftarpencatatan as $i=>$dp){
 			<td>".rupiah($dp[harga_beli])."</td>
 			<td>".rupiah($dp[harga_jual])."</td>
 			<td>".tanggal_indo($dp[tgl_pencatatan])."</td>
+			<td>".$dp[nama_pasar]."</td>
+			<td>".$lihat."</td>
 			<td>
-            	<a href='hapus-pencatatan.php?id_pencatatan=$dp[id_pencatatan]' class='btn btn-danger'>Hapus</a> 
-				<a href='edit-pencatatan.php?id_pencatatan=$dp[id_pencatatan]' class='btn btn-primary'>Edit</a>
+            	<a href='proses-ubah-status.php?id_pencatatan=$dp[id_pencatatan]' class='btn btn-primary' $tombol_status><i class='fa fa-check-square-o'></i> Sudah Dilihat</a> 
 			</td>
 		</tr>";
 }

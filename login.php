@@ -17,13 +17,13 @@
 <link rel="stylesheet" href="assets/adminlte/datatables.net-bs/css/dataTables.bootstrap.min.css">
 <script src="assets/js/autonumeric.js"></script>
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-color:blue;">
 <div class="login-box">
   <div class="login-logo">
-    <a href="">KEPALA DINAS</a>
+    <a href=""></a>
   </div>
   <!-- /.login-logo -->
-  <div class="login-box-body table-responsive ">
+  <div class="login-box-body table-responsive "style="background-color:black;">
   <?php if(isset($_GET['status'])): ?>
   <?php if($_GET['status'] == 'gagal'): ?>
   <div>
@@ -31,19 +31,19 @@
   </div>
   <?php endif; ?>
 <?php endif; ?>
-    <p class="login-box-msg">Silahkan login untuk masuk ke aplikasi</p>
+    <p class="login-box-msg"style="color:white;"><b>SILAHKAN LOGIN</b></p>
     <form action="proses-login.php" method="POST">
       <div class="form-group">
-        <label class="form-label">Username</label>
+        <label class="form-label"style="color:white;">Username</label>
         <input class="form-control" type="text" name="username" />
       </div>
       <div class="form-group">
-        <label class="form-label">Password</label>
+        <label class="form-label"style="color:white;">Password</label>
         <input class="form-control" type="password" name="password" />
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-flat">Login</button>
-        <button type="reset" class="btn btn-danger btn-flat">Reset</button>
+        <button type="submit" class="btn btn-primary btn-flat"style="background-color:blue;border:2px solid white;">Login</button>
+        <button type="reset" class="btn btn-danger btn-flat"style="background-color:blue;border:2px solid white;">Reset</button>
       </div>
     </form>
   </div>

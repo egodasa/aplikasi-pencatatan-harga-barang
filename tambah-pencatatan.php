@@ -34,6 +34,9 @@ $kecamatan = $query->fetchAll();
             </option>
             <?php endforeach; ?>
         </select>
+		<br/>
+		<label class="form-label" for="nama_pasar">Nama Pasar</label>
+        <input class="form-control" type="text" name="nama_pasar" />
         <br />
         <label class="form-label" for="tgl_pencatatan">TANGGAL</label>
         <input class="form-control" type="input" name="tgl_pencatatan" id="tgl_pencatatan" value="pilih tanggal" />

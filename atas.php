@@ -101,6 +101,12 @@ session_start();
               <li><a href="laporan-grafik.php"><i class="fa fa-circle-o"></i> Grafik</a></li>
             </ul>
           </li>
+          <?php elseif($_SESSION['level'] == 'Petugas Lapangan'): ?>
+          <li>
+            <a href="daftar-pencatatan.php">
+              <i class="fa fa-list-alt"></i> <span>Daftar Pencatatan</span>
+            </a>
+          </li>
           <?php else: ?>
           <li class="treeview">
             <a href="#">

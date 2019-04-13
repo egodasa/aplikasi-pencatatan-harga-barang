@@ -9,7 +9,7 @@ $tgl = "-- Semua Tanggal --";
 $id_pangan = 0;
 $id_kecamatan = 0;
 
-$sql = "SELECT a.*, b.nm_pangan, b.satuan, c.nm_jenis, d.nm_kecamatan FROM tbl_pencatatan a JOIN tbl_pangan b on a.id_pangan = b.id_pangan JOIN tbl_jenis_pangan c on b.id_jenis = c.id_jenis JOIN tbl_kecamatan d on a.id_kecamatan = d.id_kecamatan WHERE 1";
+$sql = "SELECT a.*, b.nm_pangan, b.satuan, c.nm_jenis, d.nm_kecamatan FROM tbl_pencatatan a JOIN tbl_pangan b on a.id_pangan = b.id_pangan JOIN tbl_jenis_pangan c on b.id_jenis = c.id_jenis JOIN tbl_kecamatan d on a.id_kecamatan = d.id_kecamatan WHERE a.status = 4";
 
 if(isset($_GET['tgl_pencatatan']) && !empty($_GET['tgl_pencatatan']) && $_GET['tgl_pencatatan'] != "-- Semua Tanggal --"){
   $tgl = $_GET['tgl_pencatatan'];
@@ -22,6 +22,12 @@ if(isset($_GET['id_pangan']) && !empty($_GET['id_pangan']) && $_GET['id_pangan']
 if(isset($_GET['id_kecamatan']) && !empty($_GET['id_kecamatan']) && $_GET['id_kecamatan'] != 0){
   $id_kecamatan = $_GET['id_kecamatan'];
   $sql .= " AND a.id_kecamatan = $id_kecamatan";
+}
+
+if($_SESSION['level'] == 'Kepala Dinas')
+{
+  // Dinas hanya melihat status pencatatan yang sudah diacc admin
+  $sql .= " AND a.status >= 3";
 }
 
 $sql .=" ORDER BY a.tgl_pencatatan ASC";
@@ -90,40 +96,20 @@ $kecamatan = $query->fetchAll();
 			<td>harga jual</td>
 			<td>tanggal pencatatan</td>
 			<td>nama pasar</td>
-			<td>status</td>
-			<td>aksi</td>
 		</tr>
 	</thead>
 	<tbody>
 		<?php
 foreach($daftarpencatatan as $i=>$dp){
-	$tombol_status = "";
-	if($dp['status'] == 1)
-	{
-		$tombol_status = "disabled";
-	}
-	$lihat = "";
-	if($dp['status'] == 0)
-	{
-		$lihat = "Belum Dilihat";
-	}
-	else
-	{
-		$lihat = "Sudah Dilihat";
-	}
-	echo "<tr>
+  echo "<tr>
 			<td>".($i+1)."</td>
 			<td>$dp[nm_pangan]</td>
 			<td>$dp[nm_jenis]</td>
 			<td>$dp[satuan]</td>
-			<td>".rupiah($dp[harga_beli])."</td>
-			<td>".rupiah($dp[harga_jual])."</td>
-			<td>".tanggal_indo($dp[tgl_pencatatan])."</td>
-			<td>".$dp[nama_pasar]."</td>
-			<td>".$lihat."</td>
-			<td>
-            	<a href='proses-ubah-status.php?id_pencatatan=$dp[id_pencatatan]' class='btn btn-primary' $tombol_status><i class='fa fa-check-square-o'></i> Sudah Dilihat</a> 
-			</td>
+			<td>".rupiah($dp['harga_beli'])."</td>
+			<td>".rupiah($dp['harga_jual'])."</td>
+			<td>".tanggal_indo($dp['tgl_pencatatan'])."</td>
+			<td>".$dp['nama_pasar']."</td>
 		</tr>";
 }
 ?>

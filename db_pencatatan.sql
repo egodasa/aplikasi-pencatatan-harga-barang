@@ -85,26 +85,28 @@ CREATE TABLE `tbl_pencatatan` (
   `harga_jual` int(11) NOT NULL,
   `nama_pasar` varchar(100) COLLATE latin1_general_ci NOT NULL,
   `status` int(11) NOT NULL DEFAULT '0' COMMENT '0=belum dilihat admin, 1=sudah dilihat admin, 2=ditolak admin, 3=belum dilihat dinas, 4=sudah dilihat dinas, 5=ditolak dinas',
+  `sumber` text COLLATE latin1_general_ci NOT NULL,
+  `keterangan` text COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`id_pencatatan`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
-INSERT INTO `tbl_pencatatan` (`id_pencatatan`, `tgl_pencatatan`, `id_pangan`, `id_kecamatan`, `harga_beli`, `harga_jual`, `nama_pasar`, `status`) VALUES
-(13,	'2018-12-01',	8,	8,	11500,	13000,	'pasar batusangkar',	4),
-(14,	'2018-12-01',	12,	8,	10500,	12000,	'',	4),
-(15,	'2018-12-08',	8,	7,	12000,	13500,	'',	4),
-(16,	'2018-12-08',	12,	7,	11000,	12500,	'',	4),
-(17,	'2018-12-15',	8,	7,	12500,	14000,	'',	4),
-(18,	'2018-12-15',	12,	7,	11500,	13500,	'',	4),
-(19,	'2018-12-22',	8,	7,	10500,	13000,	'',	4),
-(20,	'2018-12-22',	12,	7,	10500,	12000,	'',	4),
-(21,	'2018-12-29',	8,	7,	11000,	13500,	'',	4),
-(22,	'2018-12-29',	12,	7,	12000,	14000,	'',	4),
-(24,	'2018-12-01',	13,	7,	5500,	6700,	'',	4),
-(25,	'2019-02-03',	8,	8,	12000,	14000,	'',	4),
-(26,	'2018-12-03',	8,	7,	12000,	13000,	'',	4),
-(27,	'2018-12-05',	8,	8,	9000,	11000,	'',	4),
-(28,	'2019-02-11',	8,	8,	7000,	8000,	'',	4),
-(29,	'2019-03-26',	7,	8,	13000,	12000,	'pasar simabur',	4);
+INSERT INTO `tbl_pencatatan` (`id_pencatatan`, `tgl_pencatatan`, `id_pangan`, `id_kecamatan`, `harga_beli`, `harga_jual`, `nama_pasar`, `status`, `sumber`, `keterangan`) VALUES
+(13,	'2018-12-01',	8,	8,	11500,	13000,	'pasar batusangkar',	4,	'',	''),
+(14,	'2018-12-01',	12,	8,	10500,	12000,	'',	4,	'',	''),
+(15,	'2018-12-08',	8,	7,	12000,	13500,	'',	4,	'',	''),
+(16,	'2018-12-08',	12,	7,	11000,	12500,	'',	4,	'',	''),
+(17,	'2018-12-15',	8,	7,	12500,	14000,	'',	4,	'',	''),
+(18,	'2018-12-15',	12,	7,	11500,	13500,	'',	4,	'',	''),
+(19,	'2018-12-22',	8,	7,	10500,	13000,	'',	4,	'',	''),
+(20,	'2018-12-22',	12,	7,	10500,	12000,	'',	4,	'',	''),
+(21,	'2018-12-29',	8,	7,	11000,	13500,	'',	4,	'',	''),
+(22,	'2018-12-29',	12,	7,	12000,	14000,	'',	4,	'',	''),
+(24,	'2018-12-01',	13,	7,	5500,	6700,	'',	4,	'',	''),
+(25,	'2019-02-03',	8,	8,	12000,	14000,	'',	4,	'',	''),
+(26,	'2018-12-03',	8,	7,	12000,	13000,	'',	4,	'',	''),
+(27,	'2018-12-05',	8,	8,	9000,	11000,	'',	4,	'',	''),
+(28,	'2019-02-11',	8,	8,	7000,	8000,	'',	4,	'',	''),
+(29,	'2019-03-26',	7,	8,	13000,	12000,	'pasar simabur',	4,	'',	'');
 
 DROP TABLE IF EXISTS `tbl_user`;
 CREATE TABLE `tbl_user` (
@@ -125,4 +127,4 @@ INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `nama_lengkap`, `alam
 (11,	'rani',	'b9f81618db3b0d7a8be8fd904cca8b6a',	'rani',	' batipuh',	'Petugas Lapangan'),
 (12,	'guson',	'd41d8cd98f00b204e9800998ecf8427e',	'guson',	'salimpauang',	'Petugas Lapangan');
 
--- 2019-04-13 07:27:55
+-- 2019-04-14 15:05:12

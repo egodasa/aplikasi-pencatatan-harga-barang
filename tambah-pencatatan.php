@@ -47,7 +47,13 @@ $kecamatan = $query->fetchAll();
         <label class="form-label" for="harga_beli">HARGA BELI</label>
         <input class="form-control" type="text" name="harga_beli" />
         <br />
-
+        <label class="form-label" for="sumber">SUMBER DATA</label>
+        <textarea name="sumber" class="form-control" name="sumber"></textarea>
+        <br />
+        <label class="form-label" for="keterangan">KETERANGAN</label>
+        <textarea name="keterangan" class="form-control" name="keterangan"></textarea>
+        <br />
+        
         <button type="submit" class="btn btn-success">SIMPAN</button>
         <button type="reset" class="btn btn-danger">RESET</button>
         <br />

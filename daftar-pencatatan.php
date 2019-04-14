@@ -16,7 +16,7 @@ else if($_SESSION['level'] == 'Sekretaris')
 {
   $sql_where = "AND a.status < 3";
 }
-$skripsi = $db->prepare("SELECT a.status, a.id_pencatatan, a.nama_pasar, a.tgl_pencatatan, b.nm_pangan, b.satuan, c.nm_jenis, d.nm_kecamatan, a.harga_jual, a.harga_beli FROM tbl_pencatatan a JOIN tbl_pangan b on a.id_pangan = b.id_pangan JOIN tbl_jenis_pangan c on b.id_jenis = c.id_jenis JOIN tbl_kecamatan d on a.id_kecamatan = d.id_kecamatan WHERE 1 $sql_where"); 
+$skripsi = $db->prepare("SELECT a.status, a.id_pencatatan, a.nama_pasar, a.tgl_pencatatan, a.sumber, a.keterangan, b.nm_pangan, b.satuan, c.nm_jenis, d.nm_kecamatan, a.harga_jual, a.harga_beli FROM tbl_pencatatan a JOIN tbl_pangan b on a.id_pangan = b.id_pangan JOIN tbl_jenis_pangan c on b.id_jenis = c.id_jenis JOIN tbl_kecamatan d on a.id_kecamatan = d.id_kecamatan WHERE 1 $sql_where"); 
 $skripsi->execute();
 $daftarpencatatan = $skripsi->fetchAll(PDO::FETCH_ASSOC);
 
@@ -43,6 +43,8 @@ $daftarpencatatan = $skripsi->fetchAll(PDO::FETCH_ASSOC);
 			<td>kecamatan</td>
 			<td>tanggal pencatatan</td>
 			<td>nama pasar</td>
+			<td>sumber data</td>
+			<td>keterangan</td>
 			<td>status</td>
 		</tr>
 	</thead>
@@ -102,6 +104,8 @@ foreach($daftarpencatatan as $i=>$dp){
 			<td>".tanggal_indo($dp['tgl_pencatatan'])."</td>
 			<td>".$dp['nama_pasar']."</td>
 			<td>".$lihat."</td>
+      <td>".$dp['sumber']."</td>
+      <td>".$dp['keterangan']."</td>
 		</tr>";
 }
 ?>

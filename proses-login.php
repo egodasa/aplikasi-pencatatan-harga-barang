@@ -19,7 +19,7 @@
       }
 	  else if($data['level'] == "Kepala Dinas")
 	  {
-        header("Location: laporan-tabel.php");
+        header("Location: daftar-pencatatan.php");
       }
 	  else if($data['level'] == "Petugas Lapangan")
 	  {

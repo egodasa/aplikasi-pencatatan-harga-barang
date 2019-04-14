@@ -108,6 +108,11 @@ session_start();
             </a>
           </li>
           <?php else: ?>
+          <li>
+            <a href="daftar-pencatatan.php">
+              <i class="fa fa-list-alt"></i> <span>Daftar Pencatatan</span>
+            </a>
+          </li>
           <li class="treeview">
             <a href="#">
               <i class="fa fa-paste"></i> <span>Laporan Pencatatan</span>

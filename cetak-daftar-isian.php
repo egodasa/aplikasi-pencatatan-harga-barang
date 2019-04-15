@@ -144,10 +144,10 @@
         <?php endforeach; ?>
       </tbody>
     </table>
-    <div style="text-align: left; margin: 30px 30px 10px 0px; float: right;">Batusangkar, <?=tanggal_indo(date("Y-m-d"))?></div>
+    <div style="text-align: left; margin: 30px 30px 10px 0px; float: right;font-size: 10pt;">Batusangkar, <?=tanggal_indo(date("Y-m-d"))?></div>
     <div style="clear: both;"></div>
-    <div style="text-align: center; margin: 30px 30px 10px 30px; float: left;">Diketahui: <br> Kepala Dinas Pangan dan Perikanan <br> Kabupaten Tanah Datar <br> <br> <b><i></i></b></div>
-    <div style="text-align: center; margin: 30px 30px 10px 30px; float: right;"><b>Petugas Pemantauan</b> <br> <br> <br> <br> <b> <br><?=$_SESSION['nama_lengkap']?></b></div>
+    <div style="text-align: center; margin: 30px 30px 10px 30px; float: left;font-size: 10pt;">Diketahui: <br> Kepala Dinas Pangan dan Perikanan <br> Kabupaten Tanah Datar <br> <br> <b>Ir. Daryanto Sabir, M.Si</b><br>NIP. 19610118 198903 1 003</div>
+    <div style="text-align: center; margin: 30px 30px 10px 30px; float: right;font-size: 10pt;"><b>Petugas Pemantauan</b> <br> <br> <br> <br> <b> <br><?=$_SESSION['nama_lengkap']?></b></div>
     <div style="clear: both;"></div>
     <script>
       window.print();

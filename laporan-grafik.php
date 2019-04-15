@@ -168,6 +168,13 @@ if(document.getElementById("id_pangan").value != "0" && document.getElementById(
         title: {
           display: true,
           text: ['Grafik Fluktuasi Harga Pangan ' + nama_pangan, 'Bulan ' + nama_bulan + ' Tahun ' + nama_tahun]
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
         }
       }
   });

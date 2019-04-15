@@ -253,6 +253,13 @@
                     text: ['Grafik Fluktuasi Harga Pangan ' + nama_pangan, 'Bulan ' + nama_bulan + ' Tahun ' +
                       nama_tahun
                     ]
+                  },
+                  scales: {
+                    yAxes: [{
+                      ticks: {
+                        beginAtZero: true
+                      }
+                    }]
                   }
                 }
               });

@@ -104,7 +104,9 @@ $kecamatan = $query->fetchAll();
         <input type="number" min=2000 max=2100 name="tahun" class="form-control">
           <span class="input-group-btn">
             <button style="margin-top: 25px;" type="submit" class="btn btn-info btn-flat">Lihat Hasil</button>
-            <button style="margin-top: 25px;" type="button" onclick="cetak()" class="btn btn-primary btn-flat">Cetak</button>
+            <?php if($_SESSION['level'] == 'Sekretaris'): ?>
+              <button style="margin-top: 25px;" type="button" onclick="cetak()" class="btn btn-primary btn-flat">Cetak</button>
+            <?php endif; ?>
           </span>
       </div>
     </div>
@@ -167,7 +169,7 @@ foreach($daftarpencatatan as $i=>$dp){
       var tahun = document.getElementsByName("tahun")[0].value;
       var pekan = document.getElementsByName("pekan")[0].value;
       var nm_bulan = document.getElementsByName("bulan")[0].options[document.getElementsByName("bulan")[0].selectedIndex].text;
-      window.location.href = "cetak-daftar-isian.php?id_kecamatan=" + id_kecamatan + "&nm_kecamatan=" + nm_kecamatan + "&bulan=" + bulan + "&pekan=" + pekan + "&id_pangan=" + id_pangan + "&tahun=" + tahun;
+      window.open("cetak-daftar-isian.php?id_kecamatan=" + id_kecamatan + "&nm_kecamatan=" + nm_kecamatan + "&bulan=" + bulan + "&pekan=" + pekan + "&id_pangan=" + id_pangan + "&tahun=" + tahun);
     }
 </script>
 <?php

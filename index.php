@@ -3,6 +3,7 @@
   require "helper.php";
 ?>
 <html style="height: auto; min-height: 100%;">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,51 +30,53 @@
   <![endif]-->
 
   <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+
 <body class="skin-blue layout-top-nav" style="height: auto; min-height: 100%;">
-<div class="wrapper" style="height: auto; min-height: 100%;">
+  <div class="wrapper" style="height: auto; min-height: 100%;">
 
-  <header class="main-header">
-    <nav class="navbar navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="../../index2.html" class="navbar-brand">Dinas Batusangkar</a>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-            <i class="fa fa-bars"></i>
-          </button>
-        </div>
+    <header class="main-header">
+      <nav class="navbar navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="../../index2.html" class="navbar-brand">Dinas Batusangkar</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-        </div>
-        <!-- /.navbar-collapse -->
-        <!-- Navbar Right Menu -->
-        <div class="navbar-custom-menu">
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          </div>
+          <!-- /.navbar-collapse -->
+          <!-- Navbar Right Menu -->
+          <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <li><a href="login.php">Login</a></li>
             </ul>
           </div>
-        <!-- /.navbar-custom-menu -->
-      </div>
-      <!-- /.container-fluid -->
-    </nav>
-  </header>
-  <!-- Full Width Column -->
-  <div class="content-wrapper" style="min-height: 324px;">
-    <div class="container">
-      <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <h1>
-          Grafik Harga Jual/Beli Pangan
-        </h1>
-        
-      </section>
+          <!-- /.navbar-custom-menu -->
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+    </header>
+    <!-- Full Width Column -->
+    <div class="content-wrapper" style="min-height: 324px;">
+      <div class="container">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Grafik Harga Jual/Beli Pangan
+          </h1>
 
-      <!-- Main content -->
-      <section class="content">
-<?php
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <?php
   $data_pencatatan = [];
   $id_pangan = 0;
   $id_kecamatan = 0;
@@ -122,145 +125,163 @@
   
   }
 ?>
-<div class="row">
-  <form method="GET">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-      <div class="form-group">
-        <label for="id_pangan" class="form-label">Pilih Pangan</label>
-        <select class="form-control custom-select" name="id_pangan" id="id_pangan" required>
-          <option value="">-- Pilih Pangan --</option>
-          <?php foreach($pangan as $p): ?>
-            <option value="<?=$p['id_pangan']?>"><?=$p['nm_pangan']?></option>
-          <?php endforeach; ?>
-        </select>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-      <div class="form-group">
-        <label for="id_kecamatan" class="form-label">Pilih Kecamatan</label>
-        <select class="form-control custom-select" name="id_kecamatan" id="id_kecamatan" required>
-          <option value="">-- Pilih Kecamatan --</option>
-          <?php foreach($kecamatan as $p): ?>
-            <option value="<?=$p['id_kecamatan']?>"><?=$p['nm_kecamatan']?></option>
-          <?php endforeach; ?>
-        </select>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-      <div class="form-group">
-        <label for="bulan" class="form-label">Pilih Bulan</label>
-        <select class="form-control custom-select" name="bulan" id="bulan">
-          <option value="">-- Pilih Bulan --</option>
-          <option value="1">Januari</option>
-          <option value="2">Februari</option>
-          <option value="3">Maret</option>
-          <option value="4">April</option>
-          <option value="5">Mei</option>
-          <option value="6">Juni</option>
-          <option value="7">Juli</option>
-          <option value="8">Agustus</option>
-          <option value="9">September</option>
-          <option value="10">Oktober</option>
-          <option value="11">November</option>
-          <option value="12">Desember</option>
-        </select>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-      <div class="input-group input-group-sm">
-        <label for="tahun" class="form-label">Tahun</label>
-        <input type="number" min=2000 max=2100 name="tahun" class="form-control">
-          <span class="input-group-btn">
-            <button style="margin-top: 25px;" type="submit" class="btn btn-info btn-flat">Lihat Hasil</button>
-          </span>
-      </div>
-    </div>
-  </form>
-  <script>
-    document.getElementsByName("bulan")[0].value = "<?=isset($_GET['bulan']) ? $_GET['bulan'] : ""?>";
-    document.getElementsByName("tahun")[0].value = "<?=isset($_GET['tahun']) ? $_GET['tahun'] : ""?>";
-    document.getElementsByName("id_kecamatan")[0].value = "<?=isset($_GET['id_kecamatan']) ? $_GET['id_kecamatan'] : ""?>";
-    document.getElementsByName("id_pangan")[0].value = "<?=isset($_GET['id_pangan']) ? $_GET['id_pangan'] : ""?>";
-  </script>
-</div>
-<div class="chart">
-  <canvas id="grafik_jual" width="100%"></canvas>
-</div>
-<script src="assets/js/moment.js"></script>
-<script src="assets/js/chart.js"></script>
-<script src="assets/js/pikaday.js"></script>
-<script>
-var data_pencatatan = <?=json_encode($data_pencatatan)?>;
-var labels = [];
-var harga_beli = [];
-var harga_jual = [];
-var banyak_data = data_pencatatan.length;
-var nama_pangan = document.getElementsByName("id_pangan")[0].options[document.getElementsByName("id_pangan")[0].selectedIndex].text;
-var nama_kecamatan = document.getElementsByName("id_kecamatan")[0].options[document.getElementsByName("id_kecamatan")[0].selectedIndex].text;
-var nama_bulan = document.getElementsByName("bulan")[0].options[document.getElementsByName("bulan")[0].selectedIndex].text;
-var nama_tahun = document.getElementsByName("tahun")[0].value;
+          <div class="box">
+            <div class="box-body">
+              <div class="row">
+                <form method="GET">
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="form-group">
+                      <label for="id_pangan" class="form-label">Pilih Pangan</label>
+                      <select class="form-control custom-select" name="id_pangan" id="id_pangan" required>
+                        <option value="">-- Pilih Pangan --</option>
+                        <?php foreach($pangan as $p): ?>
+                        <option value="<?=$p['id_pangan']?>"><?=$p['nm_pangan']?></option>
+                        <?php endforeach; ?>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="form-group">
+                      <label for="id_kecamatan" class="form-label">Pilih Kecamatan</label>
+                      <select class="form-control custom-select" name="id_kecamatan" id="id_kecamatan" required>
+                        <option value="">-- Pilih Kecamatan --</option>
+                        <?php foreach($kecamatan as $p): ?>
+                        <option value="<?=$p['id_kecamatan']?>"><?=$p['nm_kecamatan']?></option>
+                        <?php endforeach; ?>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="form-group">
+                      <label for="bulan" class="form-label">Pilih Bulan</label>
+                      <select class="form-control custom-select" name="bulan" id="bulan">
+                        <option value="">-- Pilih Bulan --</option>
+                        <option value="1">Januari</option>
+                        <option value="2">Februari</option>
+                        <option value="3">Maret</option>
+                        <option value="4">April</option>
+                        <option value="5">Mei</option>
+                        <option value="6">Juni</option>
+                        <option value="7">Juli</option>
+                        <option value="8">Agustus</option>
+                        <option value="9">September</option>
+                        <option value="10">Oktober</option>
+                        <option value="11">November</option>
+                        <option value="12">Desember</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="input-group input-group-sm">
+                      <label for="tahun" class="form-label">Tahun</label>
+                      <input type="number" min=2000 max=2100 name="tahun" class="form-control">
+                      <span class="input-group-btn">
+                        <button style="margin-top: 25px;" type="submit" class="btn btn-info btn-flat">Lihat
+                          Hasil</button>
+                      </span>
+                    </div>
+                  </div>
+                </form>
+                <script>
+                  document.getElementsByName("bulan")[0].value = "<?=isset($_GET['bulan']) ? $_GET['bulan'] : ""?>";
+                  document.getElementsByName("tahun")[0].value = "<?=isset($_GET['tahun']) ? $_GET['tahun'] : ""?>";
+                  document.getElementsByName("id_kecamatan")[0].value =
+                    "<?=isset($_GET['id_kecamatan']) ? $_GET['id_kecamatan'] : ""?>";
+                  document.getElementsByName("id_pangan")[0].value =
+                    "<?=isset($_GET['id_pangan']) ? $_GET['id_pangan'] : ""?>";
+                </script>
+              </div>
+            </div>
+          </div>
+        <div class="box">
+        <div class="box-body">
+              <div class="chart">
+                <canvas id="grafik_jual" width="100%"></canvas>
+              </div>
+            </div>
+        </div> 
 
-var tanggal = new Pikaday({
-    field: document.getElementById('tgl_pencatatan'),
-    format: 'YYYY-MM-DD',
-});
+          <script src="assets/js/moment.js"></script>
+          <script src="assets/js/chart.js"></script>
+          <script src="assets/js/pikaday.js"></script>
+          <script>
+            var data_pencatatan = <?=json_encode($data_pencatatan)?>;
+            var labels = [];
+            var harga_beli = [];
+            var harga_jual = [];
+            var banyak_data = data_pencatatan.length;
+            var nama_pangan = document.getElementsByName("id_pangan")[0].options[document.getElementsByName(
+              "id_pangan")[0].selectedIndex].text;
+            var nama_kecamatan = document.getElementsByName("id_kecamatan")[0].options[document.getElementsByName(
+              "id_kecamatan")[0].selectedIndex].text;
+            var nama_bulan = document.getElementsByName("bulan")[0].options[document.getElementsByName("bulan")[0]
+              .selectedIndex].text;
+            var nama_tahun = document.getElementsByName("tahun")[0].value;
 
-if(document.getElementById("id_pangan").value != "0" && document.getElementById("id_kecamatan").value != "0" && document.getElementById("id_pangan").value != "-- Semua Tanggal --" && data_pencatatan.length != 0){
-  
-  for(var x = 0; x < banyak_data; x++)
-  {
-    harga_beli.push(data_pencatatan[x].harga_beli);
-    harga_jual.push(data_pencatatan[x].harga_jual);
-    labels.push("Pekan " + data_pencatatan[x].waktu_pekan);
-  }
-  
-  new Chart(document.getElementById("grafik_jual"), {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [
-          {
-            label: "Harga Beli",
-            backgroundColor: "#3e95cd",
-            data: harga_beli
-          }, {
-            label: "Harga Jual",
-            backgroundColor: "#8e5ea2",
-            data: harga_jual
-          }
-        ]
-      },
-      options: {
-        title: {
-          display: true,
-          text: ['Grafik Fluktuasi Harga Pangan ' + nama_pangan, 'Bulan ' + nama_bulan + ' Tahun ' + nama_tahun]
-        }
-      }
-  });
-}
-</script>
-      
-      </section>
-      <!-- /.content -->
+            var tanggal = new Pikaday({
+              field: document.getElementById('tgl_pencatatan'),
+              format: 'YYYY-MM-DD',
+            });
+
+            if (document.getElementById("id_pangan").value != "0" && document.getElementById("id_kecamatan").value !=
+              "0" && document.getElementById("id_pangan").value != "-- Semua Tanggal --" && data_pencatatan.length != 0
+            ) {
+
+              for (var x = 0; x < banyak_data; x++) {
+                harga_beli.push(data_pencatatan[x].harga_beli);
+                harga_jual.push(data_pencatatan[x].harga_jual);
+                labels.push("Pekan " + data_pencatatan[x].waktu_pekan);
+              }
+
+              new Chart(document.getElementById("grafik_jual"), {
+                type: 'bar',
+                data: {
+                  labels: labels,
+                  datasets: [{
+                    label: "Harga Beli",
+                    backgroundColor: "#3e95cd",
+                    data: harga_beli
+                  }, {
+                    label: "Harga Jual",
+                    backgroundColor: "#8e5ea2",
+                    data: harga_jual
+                  }]
+                },
+                options: {
+                  title: {
+                    display: true,
+                    text: ['Grafik Fluktuasi Harga Pangan ' + nama_pangan, 'Bulan ' + nama_bulan + ' Tahun ' +
+                      nama_tahun
+                    ]
+                  }
+                }
+              });
+            }
+          </script>
+
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /.container -->
     </div>
-    <!-- /.container -->
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 2.4.0
+        </div>
+        <strong>Copyright © 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+        reserved.
+      </div>
+      <!-- /.container -->
+    </footer>
   </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="container">
-      <div class="pull-right hidden-xs">
-        <b>Version</b> 2.4.0
-      </div>
-      <strong>Copyright © 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-      reserved.
-    </div>
-    <!-- /.container -->
-  </footer>
-</div>
-<!-- ./wrapper -->
+  <!-- ./wrapper -->
 
-<script src="assets/js/app_adminlte.js"></script>
-<script src="assets/js/jquery.dataTables.min.js"></script>
-<script src="assets/js/dataTables.bootstrap.min.js"></script>
+  <script src="assets/js/app_adminlte.js"></script>
+  <script src="assets/js/jquery.dataTables.min.js"></script>
+  <script src="assets/js/dataTables.bootstrap.min.js"></script>
 
-</body></html>
+</body>
+
+</html>

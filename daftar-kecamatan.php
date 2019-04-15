@@ -9,7 +9,8 @@ $skripsi->execute();
 $daftarkecamatan = $skripsi->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <a href="tambah-kecamatan.php" class="btn btn-success">Tambah Daftar Kecamatan</a>
-<table id="tabel" class="table table-bordered">
+<div class="table-responsive">
+<table id="tabel" style="overflow-x: visible; overflow-y:visible;" class="table table-bordered">
 	<thead>
 		<tr>
 			<td>No</td>
@@ -37,7 +38,7 @@ foreach($daftarkecamatan as $i=>$kcmtn){
 
 	</tbody>
 </table>
-
+</div>
 
 <?php
 

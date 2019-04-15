@@ -9,21 +9,22 @@ $daftarpangan = $skripsi->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-            <a href="tambah-user.php" class="btn btn-success">Tambah User</a>
-            <table id="tabel" class="table table-bordered">
-	<thead>
-		<tr>
-			<td>No</td>
-			<td>username</td>
-			<td>nama lengkap</td>
-			<td>alamat</td>
-			<td>level</td>
-			<td>aksi</td>
-			
-		</tr>
-	</thead>
-	<tbody>
-	<?php
+<a href="tambah-user.php" class="btn btn-success">Tambah User</a>
+<div class="table-responsive">
+	<table id="tabel" style="overflow-x: visible; overflow-y:visible;" class="table table-bordered">
+		<thead>
+			<tr>
+				<td>No</td>
+				<td>username</td>
+				<td>nama lengkap</td>
+				<td>alamat</td>
+				<td>level</td>
+				<td>aksi</td>
+
+			</tr>
+		</thead>
+		<tbody>
+			<?php
 foreach($daftarpangan as $i=>$dp){
 	echo "<tr>
 			<td>".($i+1)."</td>
@@ -39,9 +40,10 @@ foreach($daftarpangan as $i=>$dp){
 	";
 }
 ?>
-		
-	</tbody>
-</table>
+
+		</tbody>
+	</table>
+</div>
 <?php
 
 include "bawah.php"; 

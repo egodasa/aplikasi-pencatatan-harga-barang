@@ -118,7 +118,8 @@ $kecamatan = $query->fetchAll();
     document.getElementsByName("id_pangan")[0].value = "<?=isset($_GET['id_pangan']) ? $_GET['id_pangan'] : "0"?>";
   </script>
 </div>
-<table id="tabel" class="table table-bordered">
+<div class="table-responsive">
+<table id="tabel" style="overflow-x: visible; overflow-y:visible;" class="table table-bordered">
 	<thead>
 		<tr>
 			<td>No</td>
@@ -152,6 +153,7 @@ foreach($daftarpencatatan as $i=>$dp){
 ?>
 	</tbody>
 </table>
+</div>
 <script src="assets/js/moment.js"></script>
 <script src="assets/js/pikaday.js"></script>
 <script>

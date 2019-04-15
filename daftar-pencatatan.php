@@ -30,7 +30,8 @@ $daftarpencatatan = $skripsi->fetchAll(PDO::FETCH_ASSOC);
 <?php
   }
 ?>
-<table id="tabel" class="table table-bordered">
+<div class="table-responsive">
+<table id="tabel" style="overflow-x: visible; overflow-y:visible;" class="table table-bordered">
 	<thead>
 		<tr>
       <td>aksi</td>
@@ -111,6 +112,7 @@ foreach($daftarpencatatan as $i=>$dp){
 ?>
 	</tbody>
 </table>
+</div>
 
 <?php
 

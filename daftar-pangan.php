@@ -10,7 +10,8 @@ $daftarpangan = $skripsi->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <a href="tambah-pangan.php" class="btn btn-success">Tambah Daftar Pangan</a>
-<table id="tabel" class="table table-bordered">
+<div class="table-responsive">
+<table id="tabel" style="overflow-x: visible; overflow-y:visible;" class="table table-bordered">
 	<thead>
 		<tr>
 			<td>No</td>
@@ -40,6 +41,7 @@ foreach($daftarpangan as $i=>$dp){
 
 	</tbody>
 </table>
+</div>
 
 <?php
 

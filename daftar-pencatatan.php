@@ -104,9 +104,10 @@ foreach($daftarpencatatan as $i=>$dp){
 			<td>".$dp['nm_kecamatan']."</td>
 			<td>".tanggal_indo($dp['tgl_pencatatan'])."</td>
 			<td>".$dp['nama_pasar']."</td>
-			<td>".$lihat."</td>
       <td>".$dp['sumber']."</td>
       <td>".$dp['keterangan']."</td>
+			<td>".$lihat."</td>
+      
 		</tr>";
 }
 ?>

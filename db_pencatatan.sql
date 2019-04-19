@@ -106,7 +106,11 @@ INSERT INTO `tbl_pencatatan` (`id_pencatatan`, `tgl_pencatatan`, `id_pangan`, `i
 (26,	'2018-12-03',	8,	7,	12000,	13000,	'',	4,	'',	''),
 (27,	'2018-12-05',	8,	8,	9000,	11000,	'',	4,	'',	''),
 (28,	'2019-02-11',	8,	8,	7000,	8000,	'',	4,	'',	''),
-(29,	'2019-03-26',	7,	8,	13000,	12000,	'pasar simabur',	4,	'',	'');
+(29,	'2019-03-26',	7,	8,	13000,	12000,	'pasar simabur',	4,	'',	''),
+(30,	'2019-04-14',	8,	7,	11000,	12000,	'Pasar Ganyang',	3,	'Mandan',	'Harga Naik karena lagi naik'),
+(31,	'2019-04-01',	8,	7,	13000,	12000,	'Pasar Ganyang',	3,	'Sumber',	'keterangan'),
+(32,	'2019-04-30',	13,	22,	13000,	12000,	'Payakumbuah',	4,	'sumber',	'keterangan'),
+(33,	'2019-04-30',	8,	7,	13000,	12000,	'Pasar Ganyang',	0,	'dsffsdds',	'fdsfds');
 
 DROP TABLE IF EXISTS `tbl_user`;
 CREATE TABLE `tbl_user` (
@@ -116,15 +120,16 @@ CREATE TABLE `tbl_user` (
   `nama_lengkap` varchar(50) COLLATE latin1_general_ci NOT NULL,
   `alamat` varchar(50) COLLATE latin1_general_ci NOT NULL,
   `level` varchar(50) COLLATE latin1_general_ci NOT NULL,
+  `id_kecamatan` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_user`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
-INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `nama_lengkap`, `alamat`, `level`) VALUES
-(8,	'admin',	'21232f297a57a5a743894a0e4a801fc3',	'admin',	'admin',	'Sekretaris'),
-(7,	'mandan',	'e070e2dd9634c6c078a59218cdca9e23',	'eqwwq',	' wqeww',	'Sekretaris'),
-(4,	'rafi',	'139c4e89cdbedaf144d05ca54a12a57b',	'rafi',	'fsfsd',	'Kepala Dinas'),
-(9,	'sekretaris',	'ce1023b227de5c34b98c470cda4699bb',	'martis',	' batusangkar',	'Sekretaris'),
-(11,	'rani',	'b9f81618db3b0d7a8be8fd904cca8b6a',	'rani',	' batipuh',	'Petugas Lapangan'),
-(12,	'guson',	'd41d8cd98f00b204e9800998ecf8427e',	'guson',	'salimpauang',	'Petugas Lapangan');
+INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `nama_lengkap`, `alamat`, `level`, `id_kecamatan`) VALUES
+(8,	'admin',	'21232f297a57a5a743894a0e4a801fc3',	'admin',	'admin',	'Sekretaris',	NULL),
+(7,	'mandan',	'e070e2dd9634c6c078a59218cdca9e23',	'eqwwq',	' wqeww',	'Sekretaris',	NULL),
+(4,	'rafi',	'139c4e89cdbedaf144d05ca54a12a57b',	'rafi',	'fsfsd',	'Kepala Dinas',	NULL),
+(9,	'sekretaris',	'ce1023b227de5c34b98c470cda4699bb',	'martis',	' batusangkar',	'Sekretaris',	NULL),
+(11,	'rani',	'b9f81618db3b0d7a8be8fd904cca8b6a',	'rani',	' batipuh',	'Petugas Lapangan',	NULL),
+(12,	'guson',	'd41d8cd98f00b204e9800998ecf8427e',	'guson',	'salimpauang',	'Petugas Lapangan',	NULL);
 
--- 2019-04-14 15:05:12
+-- 2019-04-19 07:44:18

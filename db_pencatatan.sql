@@ -87,30 +87,33 @@ CREATE TABLE `tbl_pencatatan` (
   `status` int(11) NOT NULL DEFAULT '0' COMMENT '0=belum dilihat admin, 1=sudah dilihat admin, 2=ditolak admin, 3=belum dilihat dinas, 4=sudah dilihat dinas, 5=ditolak dinas',
   `sumber` text COLLATE latin1_general_ci NOT NULL,
   `keterangan` text COLLATE latin1_general_ci NOT NULL,
+  `id_user` int(11) NOT NULL,
   PRIMARY KEY (`id_pencatatan`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
-INSERT INTO `tbl_pencatatan` (`id_pencatatan`, `tgl_pencatatan`, `id_pangan`, `id_kecamatan`, `harga_beli`, `harga_jual`, `nama_pasar`, `status`, `sumber`, `keterangan`) VALUES
-(13,	'2018-12-01',	8,	8,	11500,	13000,	'pasar batusangkar',	4,	'',	''),
-(14,	'2018-12-01',	12,	8,	10500,	12000,	'',	4,	'',	''),
-(15,	'2018-12-08',	8,	7,	12000,	13500,	'',	4,	'',	''),
-(16,	'2018-12-08',	12,	7,	11000,	12500,	'',	4,	'',	''),
-(17,	'2018-12-15',	8,	7,	12500,	14000,	'',	4,	'',	''),
-(18,	'2018-12-15',	12,	7,	11500,	13500,	'',	4,	'',	''),
-(19,	'2018-12-22',	8,	7,	10500,	13000,	'',	4,	'',	''),
-(20,	'2018-12-22',	12,	7,	10500,	12000,	'',	4,	'',	''),
-(21,	'2018-12-29',	8,	7,	11000,	13500,	'',	4,	'',	''),
-(22,	'2018-12-29',	12,	7,	12000,	14000,	'',	4,	'',	''),
-(24,	'2018-12-01',	13,	7,	5500,	6700,	'',	4,	'',	''),
-(25,	'2019-02-03',	8,	8,	12000,	14000,	'',	4,	'',	''),
-(26,	'2018-12-03',	8,	7,	12000,	13000,	'',	4,	'',	''),
-(27,	'2018-12-05',	8,	8,	9000,	11000,	'',	4,	'',	''),
-(28,	'2019-02-11',	8,	8,	7000,	8000,	'',	4,	'',	''),
-(29,	'2019-03-26',	7,	8,	13000,	12000,	'pasar simabur',	4,	'',	''),
-(30,	'2019-04-14',	8,	7,	11000,	12000,	'Pasar Ganyang',	3,	'Mandan',	'Harga Naik karena lagi naik'),
-(31,	'2019-04-01',	8,	7,	13000,	12000,	'Pasar Ganyang',	3,	'Sumber',	'keterangan'),
-(32,	'2019-04-30',	13,	22,	13000,	12000,	'Payakumbuah',	4,	'sumber',	'keterangan'),
-(33,	'2019-04-30',	8,	7,	13000,	12000,	'Pasar Ganyang',	0,	'dsffsdds',	'fdsfds');
+INSERT INTO `tbl_pencatatan` (`id_pencatatan`, `tgl_pencatatan`, `id_pangan`, `id_kecamatan`, `harga_beli`, `harga_jual`, `nama_pasar`, `status`, `sumber`, `keterangan`, `id_user`) VALUES
+(13,	'2018-12-01',	8,	8,	11500,	13000,	'pasar batusangkar',	4,	'',	'',	0),
+(14,	'2018-12-01',	12,	8,	10500,	12000,	'',	4,	'',	'',	0),
+(15,	'2018-12-08',	8,	7,	12000,	13500,	'',	4,	'',	'',	0),
+(16,	'2018-12-08',	12,	7,	11000,	12500,	'',	4,	'',	'',	0),
+(17,	'2018-12-15',	8,	7,	12500,	14000,	'',	4,	'',	'',	0),
+(18,	'2018-12-15',	12,	7,	11500,	13500,	'',	4,	'',	'',	0),
+(19,	'2018-12-22',	8,	7,	10500,	13000,	'',	4,	'',	'',	0),
+(20,	'2018-12-22',	12,	7,	10500,	12000,	'',	4,	'',	'',	0),
+(21,	'2018-12-29',	8,	7,	11000,	13500,	'',	4,	'',	'',	0),
+(22,	'2018-12-29',	12,	7,	12000,	14000,	'',	4,	'',	'',	0),
+(24,	'2018-12-01',	13,	7,	5500,	6700,	'',	4,	'',	'',	0),
+(25,	'2019-02-03',	8,	8,	12000,	14000,	'',	4,	'',	'',	0),
+(26,	'2018-12-03',	8,	7,	12000,	13000,	'',	4,	'',	'',	0),
+(27,	'2018-12-05',	8,	8,	9000,	11000,	'',	4,	'',	'',	0),
+(28,	'2019-02-11',	8,	8,	7000,	8000,	'',	4,	'',	'',	0),
+(29,	'2019-03-26',	7,	8,	13000,	12000,	'pasar simabur',	4,	'',	'',	0),
+(30,	'2019-04-14',	8,	7,	11000,	12000,	'Pasar Ganyang',	3,	'Mandan',	'Harga Naik karena lagi naik',	0),
+(31,	'2019-04-01',	8,	7,	13000,	12000,	'Pasar Ganyang',	3,	'Sumber',	'keterangan',	0),
+(32,	'2019-04-30',	13,	22,	13000,	12000,	'Payakumbuah',	4,	'sumber',	'keterangan',	0),
+(33,	'2019-04-30',	8,	7,	13000,	12000,	'Pasar Ganyang',	0,	'dsffsdds',	'fdsfds',	0),
+(34,	'2019-04-30',	8,	11,	312,	21312,	'dsasd',	0,	'asddas',	'sadsas',	0),
+(35,	'2019-04-23',	8,	11,	12312,	2312,	'saads',	0,	'asasasd',	'assddas',	13);
 
 DROP TABLE IF EXISTS `tbl_user`;
 CREATE TABLE `tbl_user` (
@@ -124,12 +127,5 @@ CREATE TABLE `tbl_user` (
   PRIMARY KEY (`id_user`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
-INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `nama_lengkap`, `alamat`, `level`, `id_kecamatan`) VALUES
-(8,	'admin',	'21232f297a57a5a743894a0e4a801fc3',	'admin',	'admin',	'Sekretaris',	NULL),
-(7,	'mandan',	'e070e2dd9634c6c078a59218cdca9e23',	'eqwwq',	' wqeww',	'Sekretaris',	NULL),
-(4,	'rafi',	'139c4e89cdbedaf144d05ca54a12a57b',	'rafi',	'fsfsd',	'Kepala Dinas',	NULL),
-(9,	'sekretaris',	'ce1023b227de5c34b98c470cda4699bb',	'martis',	' batusangkar',	'Sekretaris',	NULL),
-(11,	'rani',	'b9f81618db3b0d7a8be8fd904cca8b6a',	'rani',	' batipuh',	'Petugas Lapangan',	NULL),
-(12,	'guson',	'd41d8cd98f00b204e9800998ecf8427e',	'guson',	'salimpauang',	'Petugas Lapangan',	NULL);
 
--- 2019-04-19 07:44:18
+-- 2019-04-25 14:41:11

@@ -3,7 +3,7 @@ require "database.php";
 $judulatas = "Daftar User";
 $judulhalaman = $judulatas;
 include "atas.php"; 
-$skripsi = $db->prepare("SELECT * FROM tbl_user"); 
+$skripsi = $db->prepare("SELECT a.*, b.nm_kecamatan FROM tbl_user a LEFT JOIN tbl_kecamatan b ON a.id_kecamatan = b.id_kecamatan"); 
 $skripsi->execute();
 $daftarpangan = $skripsi->fetchAll(PDO::FETCH_ASSOC);
 
@@ -18,19 +18,21 @@ $daftarpangan = $skripsi->fetchAll(PDO::FETCH_ASSOC);
 				<td>username</td>
 				<td>nama lengkap</td>
 				<td>alamat</td>
+				<td>kecamatan</td>
 				<td>level</td>
 				<td>aksi</td>
-
 			</tr>
 		</thead>
 		<tbody>
 			<?php
 foreach($daftarpangan as $i=>$dp){
-	echo "<tr>
+	echo 
+      "<tr>
 			<td>".($i+1)."</td>
 			<td>$dp[username]</td>
 			<td>$dp[nama_lengkap]</td>
 			<td>$dp[alamat]</td>
+			<td>$dp[nm_kecamatan]</td>
 			<td>$dp[level]</td>
 			<td>
             	<a href='hapus-user.php?id_user=$dp[id_user]' class='btn btn-danger'>Hapus</a> 

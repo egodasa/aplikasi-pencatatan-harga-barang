@@ -9,6 +9,10 @@ if(isset($_GET['id_user'])){
       $query->execute();
       $detail = $query->fetch();
       
+      $query = $db->prepare("SELECT * FROM tbl_kecamatan");
+      $query->execute();
+      $daftar_kecamatan = $query->fetchAll(PDO::FETCH_ASSOC);
+      
       // cek dulu, datanya ketemu atau tidak. Kalau gk ketemu, ya redirect ke halaman awal
       if(empty($detail)){
         header("Location: daftar-user.php");
@@ -45,6 +49,20 @@ if(isset($_GET['id_user'])){
   </div>
 
   <div class="form-group">
+    <label class="form-label" for="id_kecamatan">KECAMATAN</label>
+    <select class="form-control" id="id_kecamatan" name="id_kecamatan">
+      <option value="">-- pilih kecamatan --</option>
+      <?php
+        foreach($daftar_kecamatan as $d):
+      ?>
+        <option value="<?=$d['id_kecamatan']?>"><?=$d['nm_kecamatan']?></option>
+      <?php
+        endforeach;
+      ?>
+    </select>
+  </div>
+  
+  <div class="form-group">
     <label class="form-label" for="level">LEVEL</label>
     <select class="form-control" id="level" name="level">
       <option value="Kepala Dinas">kepala dinas</option>
@@ -58,6 +76,7 @@ if(isset($_GET['id_user'])){
 </form>
 <script>
   document.getElementById("level").value = "<?=$detail['level']?>";
+  document.getElementById("id_kecamatan").value = "<?=$detail['id_kecamatan']?>";
 </script>
 <?php
 

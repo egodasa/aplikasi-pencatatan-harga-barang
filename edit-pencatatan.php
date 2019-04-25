@@ -48,6 +48,14 @@ include "atas.php";
             </option>
             <?php endforeach; ?>
         </select>
+        <?php
+          if($_SESSION['level'] == "Petugas Lapangan")
+          {
+        ?>
+            <input type="hidden" name="id_kecamatan" value="<?=$_SESSION['id_kecamatan']?>" />
+        <?php
+          }
+        ?>
         <br />
 		<label class="form-label" for="nama_pasar">Nama Pasar</label>
         <input class="form-control" type="text" name="nama_pasar" id="nama_pasar" />
@@ -88,6 +96,15 @@ include "atas.php";
         document.getElementById("nama_pasar").value = "<?=$detail['nama_pasar']?>";
         document.getElementById("sumber").innerHTML = "<?=$detail['sumber']?>";
         document.getElementById("keterangan").innerHTML = "<?=$detail['keterangan']?>";
+        <?php
+          if($_SESSION['level'] == "Petugas Lapangan")
+          {
+        ?>
+            document.getElementsByName("id_kecamatan")[0].value = "<?=$_SESSION['id_kecamatan']?>";
+            document.getElementsByName("id_kecamatan")[0].disabled = true;
+        <?php
+          }
+        ?>
     </script>
     <?php
     include "bawah.php"; 

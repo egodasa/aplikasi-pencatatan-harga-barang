@@ -9,10 +9,12 @@
     $data = $query->fetch();
     // Cek apakah username betul atau tidak
     if($data){
+      $_SESSION['id_user'] = $data['id_user'];
       $_SESSION['username'] = $data['username'];
       $_SESSION['level'] = $data['level'];
       $_SESSION['nama_lengkap'] = $data['nama_lengkap'];
       $_SESSION['jk'] = $data['jk'];
+      $_SESSION['id_kecamatan'] = $data['id_kecamatan'];
       // Cek level agar halaman di redirect sesuai aktor
       if($data['level'] == "Sekretaris")
 	  {

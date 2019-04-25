@@ -16,6 +16,12 @@ else if($_SESSION['level'] == 'Sekretaris')
 {
   $sql_where = "AND a.status < 3";
 }
+
+if($_SESSION['level'] == 'Petugas Lapangan')
+{
+  $sql_where .= "AND a.id_user = ".$_SESSION['id_user'];
+}
+
 $skripsi = $db->prepare("SELECT a.status, a.id_pencatatan, a.nama_pasar, a.tgl_pencatatan, a.sumber, a.keterangan, b.nm_pangan, b.satuan, c.nm_jenis, d.nm_kecamatan, a.harga_jual, a.harga_beli FROM tbl_pencatatan a JOIN tbl_pangan b on a.id_pangan = b.id_pangan JOIN tbl_jenis_pangan c on b.id_jenis = c.id_jenis JOIN tbl_kecamatan d on a.id_kecamatan = d.id_kecamatan WHERE 1 $sql_where"); 
 $skripsi->execute();
 $daftarpencatatan = $skripsi->fetchAll(PDO::FETCH_ASSOC);

@@ -27,13 +27,21 @@ $kecamatan = $query->fetchAll();
         </select>
         <br />
         <label class="form-label" for="id_kecamatan">KECAMATAN</label>
-        <select class="form-control custom-select" name="id_kecamatan">
+        <select class="form-control custom-select" name="id_kecamatan" readonly>
             <?php foreach($kecamatan as $p): ?>
             <option value="<?=$p['id_kecamatan']?>">
                 <?=$p['nm_kecamatan']?>
             </option>
             <?php endforeach; ?>
         </select>
+        <?php
+          if($_SESSION['level'] == "Petugas Lapangan")
+          {
+        ?>
+            <input type="hidden" name="id_kecamatan" value="<?=$_SESSION['id_kecamatan']?>" />
+        <?php
+          }
+        ?>
 		<br/>
 		<label class="form-label" for="nama_pasar">Nama Pasar</label>
         <input class="form-control" type="text" name="nama_pasar" />
@@ -66,6 +74,15 @@ $kecamatan = $query->fetchAll();
             field: document.getElementById('tgl_pencatatan'),
             format: 'YYYY-MM-DD',
         });
+        <?php
+          if($_SESSION['level'] == "Petugas Lapangan")
+          {
+        ?>
+            document.getElementsByName("id_kecamatan")[0].value = "<?=$_SESSION['id_kecamatan']?>";
+            document.getElementsByName("id_kecamatan")[0].disabled = true;
+        <?php
+          }
+        ?>
     </script>
     <?php
     include "bawah.php"; 

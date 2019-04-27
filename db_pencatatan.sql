@@ -127,5 +127,13 @@ CREATE TABLE `tbl_user` (
   PRIMARY KEY (`id_user`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
+INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `nama_lengkap`, `alamat`, `level`, `id_kecamatan`) VALUES
+(8,	'admin',	'21232f297a57a5a743894a0e4a801fc3',	'admin',	'admin',	'Sekretaris',	NULL),
+(7,	'mandan',	'e070e2dd9634c6c078a59218cdca9e23',	'eqwwq',	' wqeww',	'Sekretaris',	NULL),
+(4,	'rafi',	'139c4e89cdbedaf144d05ca54a12a57b',	'rafi',	'fsfsd',	'Kepala Dinas',	NULL),
+(9,	'sekretaris',	'ce1023b227de5c34b98c470cda4699bb',	'martis',	' batusangkar',	'Sekretaris',	NULL),
+(11,	'rani',	'b9f81618db3b0d7a8be8fd904cca8b6a',	'rani',	' batipuh',	'Petugas Lapangan',	NULL),
+(12,	'guson',	'd41d8cd98f00b204e9800998ecf8427e',	'guson',	'salimpauang',	'Petugas Lapangan',	NULL),
+(13,	'petugas1',	'b53fe7751b37e40ff34d012c7774d65f',	'petugas1',	'petugas 1 ',	'Petugas Lapangan',	11);
 
--- 2019-04-25 14:41:11
+-- 2019-04-27 02:56:21

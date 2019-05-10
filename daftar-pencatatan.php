@@ -10,7 +10,7 @@ $sql_where = "";
 if($_SESSION['level'] == 'Kepala Dinas')
 {
   // Dinas hanya melihat status pencatatan yang sudah diacc admin
-  $sql_where = "AND a.status >= 3";
+  $sql_where = "AND a.status = 3";
 }
 else if($_SESSION['level'] == 'Sekretaris')
 {

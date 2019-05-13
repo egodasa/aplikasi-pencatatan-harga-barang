@@ -29,9 +29,9 @@
         header("Location: daftar-pencatatan.php");
       }
     }else{
-      header("Location: login.php?status=gagal");
+      header("Location: login.php?status=gagal&user=".$_POST['user']);
     }
   }else{
-    header("Location: login.php");
+    header("Location: login.php?user=".$_POST['user']);
   }
 ?>

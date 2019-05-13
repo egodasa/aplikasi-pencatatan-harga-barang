@@ -1,4 +1,28 @@
+<?php
+$gambar="pangan1.jpg";
+$user="";
+if(!isset($_GET['user']))
+{
+	$user="";
+}
+else
+{
+	$user=$_GET['user'];	
+}
 
+if($user=="kepaladinas")
+{
+	$gambar="kepaladinas.jpg";
+}
+elseif($user=="petugas")
+{
+	$gambar="petugas.jpg";
+}
+elseif($user=="admin")
+{
+	$gambar="admin.jpg";
+}
+?>
 <html>
 <head>
 <title>Login Ke Aplikasi</title>
@@ -18,7 +42,7 @@
 <link rel="stylesheet" href="assets/adminlte/datatables.net-bs/css/dataTables.bootstrap.min.css">
 <script src="assets/js/autonumeric.js"></script>
 </head>
-<body class="hold-transition login-page" style="background-color:blue;">
+<body class="hold-transition login-page" style="background-image:url('assets/img/<?=$gambar?>');background-repeat: no-repeat;background-position: center;background-size: cover;s">
 <div class="login-box">
   <div class="login-logo">
     <a href=""></a>
@@ -34,6 +58,7 @@
 <?php endif; ?>
     <p class="login-box-msg"style="color:white;"><b>SILAHKAN LOGIN</b></p>
     <form action="proses-login.php" method="POST">
+      <input type="hidden" name="user" value="<?=$user?>" />
       <div class="form-group">
         <label class="form-label"style="color:white;">Username</label>
         <input class="form-control" type="text" name="username" />

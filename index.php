@@ -42,7 +42,7 @@
       <nav class="navbar navbar-static-top">
         <div class="container">
           <div class="navbar-header">
-            <a href="../../index2.html" class="navbar-brand">Dinas Batusangkar</a>
+            <a href="../../index2.html" class="navbar-brand"><b>PEMERINTAH KABUPATEN TANAH DATAR</b></a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
               <i class="fa fa-bars"></i>
             </button>
@@ -55,7 +55,15 @@
           <!-- Navbar Right Menu -->
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-              <li><a href="login.php">Login</a></li>
+            	<li><a data-toggle="modal" data-target="#modal-default" href="#">Petunjuk</a></li>
+            	<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Login <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="login.php?user=admin">Login Admin</a></li>
+                <li><a href="login.php?user=kepaladinas">Login Kepala Dinas</a></li>
+                <li><a href="login.php?user=petugas">Login Petugas</a></li>
+              </ul>
+            </li>
             </ul>
           </div>
           <!-- /.navbar-custom-menu -->
@@ -64,7 +72,7 @@
       </nav>
     </header>
     <!-- Full Width Column -->
-    <div class="content-wrapper" style="min-height: 324px;">
+    <div class="content-wrapper" style="min-height: 324px;background-image:url('assets/img/pangan1.jpg');background-repeat: no-repeat;background-position: center;background-size: cover;">
       <div class="container">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -193,14 +201,40 @@
               </div>
             </div>
           </div>
-        <div class="box">
+        <div class="box" style="height: 700px;">
         <div class="box-body">
-              <div class="chart">
+              <div class="chart" style="height: 700px;">
                 <canvas id="grafik_jual" width="100%"></canvas>
               </div>
             </div>
         </div> 
+				<div class="modal fade" id="modal-default" style="display: none;">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Penggunaan</h4>
+              </div>
+              <div class="modal-body">
+                <p>Puji syukur kehadirat Tuhan Yang Maha Esa karena anugerah dari-Nya kami dapat menyelesaikan program yang dapat membantu masyarakat dalam melihat daftar harga pangan di kabupaten tanah datar
+Berikut tata cara melihat daftar harga pangan :</p>
+<ol>
+	<li>Pilih pangan apa yang ingin saudara lihat harganya</li>
+	<li>pilih kecamatan yang ingin saudara lihat</li>
+	<li>Kemudian pilih bulan dan tahun</li>
+	<li>Klik lihat hasil dan saudara akan melihat daftar dan grafik harga pangan di kabupaten tanah datar</li>
+</ol>
 
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Tutup</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
           <script src="assets/js/moment.js"></script>
           <script src="assets/js/chart.js"></script>
           <script src="assets/js/pikaday.js"></script>

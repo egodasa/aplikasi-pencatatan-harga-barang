@@ -5,5 +5,5 @@
     unset($_SESSION['level']);
     unset($_SESSION['jk']);
   }
-  header("Location: login.php");
+  header("Location: index.php");
 ?>

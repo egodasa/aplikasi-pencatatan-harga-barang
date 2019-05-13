@@ -13,12 +13,12 @@ $daftarpangan = $skripsi->fetchAll(PDO::FETCH_ASSOC);
 <div class="table-responsive">
 <table id="tabel" style="overflow-x: visible; overflow-y:visible;" class="table table-bordered">
 	<thead>
-		<tr>
-			<td>No</td>
-			<td>nama pangan</td>
-			<td>jenis</td>
-			<td>satuan</td>
-			<td>aksi</td>
+	<tr style="background-color: #3C8DBC;">
+			<td><font color='white'><b>No</b></td>
+			<td><font color='white'><b>Nama Pangan</b></td>
+			<td><font color='white'><b>Jenis</b></td>
+			<td><font color='white'><b>Satuan</b></td>
+			<td><font color='white'><b>Aksi</b></td>
 
 		</tr>
 	</thead>

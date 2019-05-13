@@ -39,20 +39,20 @@ $daftarpencatatan = $skripsi->fetchAll(PDO::FETCH_ASSOC);
 <div class="table-responsive">
 <table id="tabel" style="overflow-x: visible; overflow-y:visible;" class="table table-bordered">
 	<thead>
-		<tr>
-      <td>aksi</td>
-			<td>No</td>
-			<td>nama pangan</td>
-			<td>jenis</td>
-			<td>satuan</td>
-			<td>harga beli</td>
-			<td>harga jual</td>
-			<td>kecamatan</td>
-			<td>tanggal pencatatan</td>
-			<td>nama pasar</td>
-			<td>sumber data</td>
-			<td>keterangan</td>
-			<td>status</td>
+	<tr style="background-color: #3C8DBC;">
+      <td><font color='white'><b>Aksi</b></td>
+			<td><font color='white'><b>No</b></td>
+			<td><font color='white'><b>Nama Pangan</b></td>
+			<td><font color='white'><b>Jenis</td>
+			<td><font color='white'><b>Satuan</b></td>
+			<td><font color='white'><b>Harga Beli</b></td>
+			<td><font color='white'><b>Harga Jual</b></td>
+			<td><font color='white'><b>Kecamatan</b></td>
+			<td><font color='white'><b>Tanggal Pencatatan</b></td>
+			<td><font color='white'><b>Nama Pasar</b></td>
+			<td><font color='white'><b>Sumber Data</b></td>
+			<td><font color='white'><b>Keterangan</b></td>
+			<td><font color='white'><b>Status</b></td>
 		</tr>
 	</thead>
 	<tbody>

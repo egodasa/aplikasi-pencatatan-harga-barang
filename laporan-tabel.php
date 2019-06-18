@@ -104,7 +104,7 @@ $kecamatan = $query->fetchAll();
         <input type="number" min=2000 max=2100 name="tahun" class="form-control">
           <span class="input-group-btn">
             <button style="margin-top: 25px;" type="submit" class="btn btn-info btn-flat">Lihat Hasil</button>
-            <?php if($_SESSION['level'] == 'Sekretaris'): ?>
+            <?php if($_SESSION['level'] == 'Sekretaris' || $_SESSION['level'] == 'Kepala Dinas'): ?>
               <button style="margin-top: 25px;" type="button" onclick="cetak()" class="btn btn-primary btn-flat">Cetak</button>
             <?php endif; ?>
           </span>

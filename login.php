@@ -18,7 +18,7 @@ elseif($user=="petugas")
 {
 	$gambar="petugas.jpg";
 }
-elseif($user=="admin")
+elseif($user=="sekretaris")
 {
 	$gambar="admin.jpg";
 }
@@ -68,8 +68,8 @@ elseif($user=="admin")
         <input class="form-control" type="password" name="password" />
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-flat"style="background-color:blue;border:2px solid white;">Login</button>
-        <button type="reset" class="btn btn-danger btn-flat"style="background-color:blue;border:2px solid white;">Reset</button>
+        <button type="submit" class="btn btn-primary btn-flat"style="background-color:#3C8DBC;border:2px solid white;">Login</button>
+        <button type="reset" class="btn btn-danger btn-flat"style="background-color:#3C8DBC;border:2px solid white;">Reset</button>
       </div>
     </form>
   </div>

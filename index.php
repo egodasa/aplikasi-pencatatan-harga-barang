@@ -59,7 +59,7 @@
             	<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Login <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="login.php?user=admin">Login Admin</a></li>
+                <li><a href="login.php?user=sekretaris">Login Sekretaris</a></li>
                 <li><a href="login.php?user=kepaladinas">Login Kepala Dinas</a></li>
                 <li><a href="login.php?user=petugas">Login Petugas</a></li>
               </ul>

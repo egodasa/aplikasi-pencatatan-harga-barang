@@ -1,10 +1,24 @@
 <?
   session_start();
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  	$level = "";
+  	if($_POST['user'] == "kepaladinas")
+	  {
+      $level = "Kepala Dinas";
+    }
+	  else if($_POST['user'] == "petugas")
+	  {
+      $level = "Petugas Lapangan";
+    }
+	  else if($_POST['user'] == "sekretaris")
+	  {
+      $level = "Sekretaris";
+    }
     require_once('database.php');
-    $query = $db->prepare("SELECT * FROM tbl_user WHERE username = :username AND password = md5(:password) LIMIT 1");
+    $query = $db->prepare("SELECT * FROM tbl_user WHERE username = :username AND password = md5(:password) AND level = :level LIMIT 1");
     $query->bindParam('username', $_POST['username']); 
     $query->bindParam('password', $_POST['password']); 
+    $query->bindParam('level', $level); 
     $query->execute();
     $data = $query->fetch();
     // Cek apakah username betul atau tidak
